@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supplementary listening pages</title>
+<style>
+  :root { --fg:#1b1b1b; --muted:#6b6b6b; --line:#dcdcdc; --bg:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e8e8e8; --muted:#9a9a9a; --line:#333; --bg:#141414; } }
+  body { margin:0; padding:24px 16px 48px; font:15px/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:860px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 14px; }
+  h2 { font-size:15px; margin:22px 0 6px; }
+  ul { padding-left:1.2em; margin:0; }
+  li { margin:4px 0; }
+  .d { color:var(--muted); font-size:13px; }
+</style></head>
+<body><main>
+<h1>Supplementary listening pages</h1>
+
+<h2>Starred cells beside baselines</h2>
+<ul>
+  <li><a href="favorites_yamnet/index.html">Prompt-Embed “drum loop” (YAMNet map): starred cells beside Direct-Latent, Flow-Env and the class written into the prompt</a></li>
+  <li><a href="favorites_prompt_only/index.html">Prompt-Embed “melodic synth riff” and “ambient pad” (YAMNet map): starred cells beside the 1st class written into the prompt</a>
+    <div class="d">one row per starred cell, three prompt-only seeds each, with the class YAMNet hears and the run's fitness</div></li>
+</ul>
+
+<h2>Maps</h2>
+<ul>
+  <li><a href="simple/qd_yamnet_embed_shift_sa3small_drumloop_g1000/index.html">Prompt-Embed “drum loop” (YAMNet map): one-page map, fitness threshold (starts at 0.6), music / other, hover to play</a></li>
+  <li><a href="simple/qd_conf02_embed_sa3small_ambientpad_g1000_wsl/index.html">Prompt-Embed “ambient pad” (YAMNet map): one-page map, fitness threshold, music / other, hover to play</a></li>
+  <li><a href="maps/qd_yamnet_embed_shift_sa3small_drumloop_g1000/index.html">Prompt-Embed “drum loop”, YAMNet map</a></li>
+  <li><a href="maps/qd_cvt_embed_shift_sa3small_drumloop_g1000/index.html">Prompt-Embed “drum loop”, CLAP CVT map</a></li>
+</ul>
+</main></body></html>

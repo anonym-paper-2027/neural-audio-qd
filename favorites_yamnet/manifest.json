@@ -1,0 +1,700 @@
+{
+ "drum_loop_alone": [
+  {
+   "wav": "audio/drum_loop_alone_00.wav",
+   "fitness": 0.6759523808956146,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_01.wav",
+   "fitness": 0.6374290347099304,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_02.wav",
+   "fitness": 0.6128681898117065,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_03.wav",
+   "fitness": 0.6833737373352051,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_04.wav",
+   "fitness": 0.6636300802230835,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_05.wav",
+   "fitness": 0.688888555765152,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_06.wav",
+   "fitness": 0.6441233396530152,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_07.wav",
+   "fitness": 0.6500841557979584,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_08.wav",
+   "fitness": 0.6334540128707886,
+   "heard": "Music"
+  },
+  {
+   "wav": "audio/drum_loop_alone_09.wav",
+   "fitness": 0.6545681178569793,
+   "heard": "Music"
+  }
+ ],
+ "rows": [
+  {
+   "cell": [
+    293,
+    292
+   ],
+   "classes": [
+    "Crackle",
+    "Fire"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0293_y0292_prompt_embed.wav",
+    "fitness": 0.677569,
+    "generation": 275
+   },
+   "flow_env": {
+    "wav": "audio/x0293_y0292_flow_env.wav",
+    "fitness": 0.653012,
+    "generation": 406
+   },
+   "direct_latent": {
+    "wav": "audio/x0293_y0292_direct_latent.wav",
+    "fitness": 0.54996,
+    "generation": 593
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from crackle sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0293_y0292_prompt_only_seed0.wav",
+      "fitness": 0.6595046281814575,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0293_y0292_prompt_only_seed1.wav",
+      "fitness": 0.6813106536865234,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    336,
+    294
+   ],
+   "classes": [
+    "Skateboard",
+    "Vehicle"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0336_y0294_prompt_embed.wav",
+    "fitness": 0.670604,
+    "generation": 524
+   },
+   "flow_env": {
+    "wav": "audio/x0336_y0294_flow_env.wav",
+    "fitness": 0.649556,
+    "generation": 955
+   },
+   "direct_latent": {
+    "wav": "audio/x0336_y0294_direct_latent.wav",
+    "fitness": 0.54929,
+    "generation": 730
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from skateboard sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0336_y0294_prompt_only_seed0.wav",
+      "fitness": 0.6584517598152161,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0336_y0294_prompt_only_seed1.wav",
+      "fitness": 0.6733886659145355,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    435,
+    464
+   ],
+   "classes": [
+    "Glass",
+    "Breaking"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0435_y0464_prompt_embed.wav",
+    "fitness": 0.597036,
+    "generation": 131
+   },
+   "flow_env": {
+    "wav": "audio/x0435_y0464_flow_env.wav",
+    "fitness": 0.676494,
+    "generation": 752
+   },
+   "direct_latent": {
+    "wav": "audio/x0435_y0464_direct_latent.wav",
+    "fitness": 0.556663,
+    "generation": 572
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from glass sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0435_y0464_prompt_only_seed0.wav",
+      "fitness": 0.6335260152816773,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0435_y0464_prompt_only_seed1.wav",
+      "fitness": 0.6957216620445251,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    354,
+    348
+   ],
+   "classes": [
+    "Tap",
+    "Door"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0354_y0348_prompt_embed.wav",
+    "fitness": 0.722254,
+    "generation": 790
+   },
+   "flow_env": {
+    "wav": "audio/x0354_y0348_flow_env.wav",
+    "fitness": 0.633516,
+    "generation": 506
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from tap sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0354_y0348_prompt_only_seed0.wav",
+      "fitness": 0.7084343433380127,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0354_y0348_prompt_only_seed1.wav",
+      "fitness": 0.6533169209957123,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    337,
+    494
+   ],
+   "classes": [
+    "Engine",
+    "Silence"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0337_y0494_prompt_embed.wav",
+    "fitness": 0.698382,
+    "generation": 657
+   },
+   "flow_env": {
+    "wav": "audio/x0337_y0494_flow_env.wav",
+    "fitness": 0.491966,
+    "generation": 601
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from engine sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0337_y0494_prompt_only_seed0.wav",
+      "fitness": 0.6290471076965332,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0337_y0494_prompt_only_seed1.wav",
+      "fitness": 0.6149751424789429,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    468,
+    360
+   ],
+   "classes": [
+    "Scratch",
+    "Chopping (food)"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0468_y0360_prompt_embed.wav",
+    "fitness": 0.691897,
+    "generation": 848
+   },
+   "flow_env": {
+    "wav": "audio/x0468_y0360_flow_env.wav",
+    "fitness": 0.685035,
+    "generation": 163
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from scratch sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0468_y0360_prompt_only_seed0.wav",
+      "fitness": 0.6543480098247528,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0468_y0360_prompt_only_seed1.wav",
+      "fitness": 0.6935261011123657,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    398,
+    379
+   ],
+   "classes": [
+    "Mechanisms",
+    "Typewriter"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0398_y0379_prompt_embed.wav",
+    "fitness": 0.69094,
+    "generation": 506
+   },
+   "flow_env": {
+    "wav": "audio/x0398_y0379_flow_env.wav",
+    "fitness": 0.617545,
+    "generation": 292
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from mechanisms sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0398_y0379_prompt_only_seed0.wav",
+      "fitness": 0.6676838338375092,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0398_y0379_prompt_only_seed1.wav",
+      "fitness": 0.5868296027183533,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    454,
+    455
+   ],
+   "classes": [
+    "Thump, thud",
+    "Thunk"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0454_y0455_prompt_embed.wav",
+    "fitness": 0.681057,
+    "generation": 894
+   },
+   "flow_env": {
+    "wav": "audio/x0454_y0455_flow_env.wav",
+    "fitness": 0.626512,
+    "generation": 702
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from thump, thud sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0454_y0455_prompt_only_seed0.wav",
+      "fitness": 0.6577628195285797,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0454_y0455_prompt_only_seed1.wav",
+      "fitness": 0.6190011024475097,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    434,
+    378
+   ],
+   "classes": [
+    "Crack",
+    "Typing"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0434_y0378_prompt_embed.wav",
+    "fitness": 0.672367,
+    "generation": 328
+   },
+   "flow_env": {
+    "wav": "audio/x0434_y0378_flow_env.wav",
+    "fitness": 0.684005,
+    "generation": 577
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from crack sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0434_y0378_prompt_only_seed0.wav",
+      "fitness": 0.6051859974861145,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0434_y0378_prompt_only_seed1.wav",
+      "fitness": 0.6523377060890198,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    83,
+    82
+   ],
+   "classes": [
+    "Clip-clop",
+    "Horse"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0083_y0082_prompt_embed.wav",
+    "fitness": 0.665952,
+    "generation": 113
+   },
+   "flow_env": {
+    "wav": "audio/x0083_y0082_flow_env.wav",
+    "fitness": 0.670406,
+    "generation": 683
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from clip-clop sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0083_y0082_prompt_only_seed0.wav",
+      "fitness": 0.6464858055114746,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0083_y0082_prompt_only_seed1.wav",
+      "fitness": 0.6904351890087128,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    59,
+    60
+   ],
+   "classes": [
+    "Heart sounds, heartbeat",
+    "Heart murmur"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0059_y0060_prompt_embed.wav",
+    "fitness": 0.659257,
+    "generation": 320
+   },
+   "flow_env": {
+    "wav": "audio/x0059_y0060_flow_env.wav",
+    "fitness": 0.620872,
+    "generation": 777
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from heart sounds, heartbeat sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0059_y0060_prompt_only_seed0.wav",
+      "fitness": 0.567751944065094,
+      "heard": "Heart murmur"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0059_y0060_prompt_only_seed1.wav",
+      "fitness": 0.594985955953598,
+      "heard": "Heart sounds, heartbeat"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    473,
+    378
+   ],
+   "classes": [
+    "Crumpling, crinkling",
+    "Typing"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0473_y0378_prompt_embed.wav",
+    "fitness": 0.623653,
+    "generation": 849
+   },
+   "flow_env": {
+    "wav": "audio/x0473_y0378_flow_env.wav",
+    "fitness": 0.663648,
+    "generation": 618
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from crumpling, crinkling sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0473_y0378_prompt_only_seed0.wav",
+      "fitness": 0.6774266600608826,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0473_y0378_prompt_only_seed1.wav",
+      "fitness": 0.6240895569324494,
+      "heard": "Whack, thwack"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    378,
+    420
+   ],
+   "classes": [
+    "Typing",
+    "Explosion"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0378_y0420_prompt_embed.wav",
+    "fitness": 0.621876,
+    "generation": 209
+   },
+   "flow_env": {
+    "wav": null
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from typing sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0378_y0420_prompt_only_seed0.wav",
+      "fitness": 0.6974710464477539,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0378_y0420_prompt_only_seed1.wav",
+      "fitness": 0.6847422957420349,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    280,
+    281
+   ],
+   "classes": [
+    "Thunderstorm",
+    "Thunder"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0280_y0281_prompt_embed.wav",
+    "fitness": 0.608418,
+    "generation": 310
+   },
+   "flow_env": {
+    "wav": "audio/x0280_y0281_flow_env.wav",
+    "fitness": 0.607824,
+    "generation": 424
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from thunderstorm sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0280_y0281_prompt_only_seed0.wav",
+      "fitness": 0.6082699418067932,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0280_y0281_prompt_only_seed1.wav",
+      "fitness": 0.5628217101097107,
+      "heard": "Thunderstorm"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    336,
+    454
+   ],
+   "classes": [
+    "Skateboard",
+    "Thump, thud"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0336_y0454_prompt_embed.wav",
+    "fitness": 0.595894,
+    "generation": 982
+   },
+   "flow_env": {
+    "wav": "audio/x0336_y0454_flow_env.wav",
+    "fitness": 0.612747,
+    "generation": 959
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from skateboard sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0336_y0454_prompt_only_seed0.wav",
+      "fitness": 0.6584517598152161,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0336_y0454_prompt_only_seed1.wav",
+      "fitness": 0.6733886659145355,
+      "heard": "Music"
+     }
+    ]
+   }
+  },
+  {
+   "cell": [
+    292,
+    336
+   ],
+   "classes": [
+    "Fire",
+    "Skateboard"
+   ],
+   "prompt_embed": {
+    "wav": "audio/x0292_y0336_prompt_embed.wav",
+    "fitness": 0.561584,
+    "generation": 834
+   },
+   "flow_env": {
+    "wav": "audio/x0292_y0336_flow_env.wav",
+    "fitness": 0.612128,
+    "generation": 907
+   },
+   "direct_latent": {
+    "wav": null
+   },
+   "prompt_only": {
+    "prompt": "drum loop made from fire sounds",
+    "clips": [
+     {
+      "seed": 0,
+      "wav": "audio/x0292_y0336_prompt_only_seed0.wav",
+      "fitness": 0.655718868970871,
+      "heard": "Music"
+     },
+     {
+      "seed": 1,
+      "wav": "audio/x0292_y0336_prompt_only_seed1.wav",
+      "fitness": 0.6480889558792114,
+      "heard": "Music"
+     }
+    ]
+   }
+  }
+ ]
+}

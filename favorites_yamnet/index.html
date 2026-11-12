@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starred cells of the Prompt-Embed run, beside the other search spaces</title>
+<style>
+  :root { --fg:#1b1b1b; --muted:#6b6b6b; --line:#dcdcdc; --bg:#fff; --head:#f3f3f3; --hit:#1a7f37; --miss:#a40e26; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8e8e8; --muted:#9a9a9a; --line:#333; --bg:#141414; --head:#1f1f1f; --hit:#4cc26a; --miss:#f0637a; }
+  }
+  body { margin:0; padding:24px 16px 48px; font:15px/1.45 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:1400px; margin:0 auto; }
+  h1 { font-size:20px; margin:0 0 6px; }
+  p.lead { color:var(--muted); margin:0 0 18px; max-width:960px; }
+  table { border-collapse:collapse; width:100%; table-layout:fixed; }
+  th, td { border-top:1px solid var(--line); padding:10px 6px; vertical-align:top; text-align:left; }
+
+  th { background:var(--head); font-weight:600; position:sticky; top:0; }
+  th small { display:block; color:var(--muted); font-weight:400; font-size:11.5px; overflow-wrap:anywhere; }
+  th .what { display:block; color:var(--fg); font-weight:400; font-size:12px; margin:3px 0 4px; }
+  td.n, th:first-child { color:var(--muted); width:1.6em; }
+  td.cell, th:nth-child(2) { width:11em; }
+  audio { width:100%; min-width:150px; max-width:240px; height:32px; display:block; }
+  .meta { color:var(--muted); font-size:12.5px; margin-top:4px; }
+  .meta + audio { margin-top:10px; }
+  .prompt { font-size:12.5px; margin-top:2px; font-style:italic; }
+  .empty { color:var(--muted); font-style:italic; }
+  .hit { color:var(--hit); } .miss { color:var(--miss); }
+  footer { color:var(--muted); font-size:12.5px; margin-top:18px; }
+  section.base { margin:0 0 22px; padding:12px 14px; background:var(--head); border-radius:6px; }
+  section.base h2 { font-size:15px; margin:0 0 4px; }
+  section.base p { color:var(--muted); font-size:13px; margin:0 0 10px; max-width:960px; }
+  .clips { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:10px 14px; }
+  .clips audio { max-width:none; }
+</style></head>
+<body><main>
+<h1>Starred cells of the Prompt-Embed run, beside the other search spaces</h1>
+<p class="lead">Each row is a cell of the YAMNet map that we starred while listening to the Prompt-Embed archive,
+labelled by the class YAMNet hears first in it. The other columns are what the same cell holds in the
+Flow-Env and Direct-Latent runs (same map, fitness, operators and budget: 512 + 256 × 1000), and what
+Stable Audio 3 produces when asked for that class in words instead. All clips are 5 s, prompt “drum loop”,
+fitness = 0.75 · CLAP-music(“drum loop”) + 0.25 · PQ/10. Rows whose cell every search space reached come
+first, then the rest; within each group by the Prompt-Embed clip’s fitness.</p>
+<section class="base">
+<h2>The starting point: “drum loop” alone</h2>
+<p>Every search below starts from the same text prompt, “drum loop”, and the same generator. These are 10
+clips of that prompt with nothing else changed but the seed: what the generator gives before any search.
+Each is labelled with its fitness and the class YAMNet hears first.</p>
+<div class="clips"><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_00.wav"></audio><div class="meta">#1 · fitness 0.676 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_01.wav"></audio><div class="meta">#2 · fitness 0.637 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_02.wav"></audio><div class="meta">#3 · fitness 0.613 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_03.wav"></audio><div class="meta">#4 · fitness 0.683 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_04.wav"></audio><div class="meta">#5 · fitness 0.664 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_05.wav"></audio><div class="meta">#6 · fitness 0.689 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_06.wav"></audio><div class="meta">#7 · fitness 0.644 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_07.wav"></audio><div class="meta">#8 · fitness 0.650 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_08.wav"></audio><div class="meta">#9 · fitness 0.633 · YAMNet: Music</div></div><div class="clip"><audio controls loop preload="none" src="audio/drum_loop_alone_09.wav"></audio><div class="meta">#10 · fitness 0.655 · YAMNet: Music</div></div></div>
+</section>
+<table>
+  <thead><tr>
+    <th></th>
+    <th>YAMNet class<span class="what">the sound class the clip should be heard as (the cell's 1st class)</span></th>
+    <th>Prompt only (baseline)<span class="what">no search: the class written into the text prompt, the generator run as is</span><small>“drum loop made from {cls} sounds”, two clips per class (seeds 0, 1) · the class YAMNet heard first</small></th>
+    <th>Direct-Latent<span class="what">MAP-Elites over the generator's latent noise itself (Gaussian, no prior)</span><small>qd_yamnet_gauss_ops3_same_fsd50k_nomusic_drumloop · gen 1000, 1,735 cells · 3/16 of these cells</small></th>
+    <th>Flow-Env<span class="what">MAP-Elites over latent noise drawn from a flow prior fitted to FSD50K (non-music)</span><small>qd_yamnet_flow_shift_same_fsd50k_nomusic_drumloop · gen 1000, 6,451 cells · 15/16 of these cells</small></th>
+    <th>Prompt-Embed (ours, main)<span class="what">MAP-Elites over a push vector added to the “drum loop” prompt embedding; same generator, seed fixed</span><small>qd_yamnet_embed_shift_sa3small_drumloop_g1000 · gen 1000, 4,659 cells</small></th>
+  </tr></thead>
+  <tbody>
+      <tr>
+        <td class="n">1</td>
+        <td class="cell"><b>Crackle</b>
+          <div class="meta">cell 293, 292</div></td>
+        <td><audio controls loop preload="none" src="audio/x0293_y0292_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.660 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0293_y0292_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.681 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from crackle sounds”</div></td>
+        <td><audio controls loop preload="none" src="audio/x0293_y0292_direct_latent.wav"></audio><div class="meta">fitness 0.550 · gen 593</div></td>
+        <td><audio controls loop preload="none" src="audio/x0293_y0292_flow_env.wav"></audio><div class="meta">fitness 0.653 · gen 406</div></td>
+        <td><audio controls loop preload="none" src="audio/x0293_y0292_prompt_embed.wav"></audio><div class="meta">fitness 0.678 · gen 275</div></td>
+      </tr>
+      <tr>
+        <td class="n">2</td>
+        <td class="cell"><b>Skateboard</b>
+          <div class="meta">cell 336, 294</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0294_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.658 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0336_y0294_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.673 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from skateboard sounds”</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0294_direct_latent.wav"></audio><div class="meta">fitness 0.549 · gen 730</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0294_flow_env.wav"></audio><div class="meta">fitness 0.650 · gen 955</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0294_prompt_embed.wav"></audio><div class="meta">fitness 0.671 · gen 524</div></td>
+      </tr>
+      <tr>
+        <td class="n">3</td>
+        <td class="cell"><b>Glass</b>
+          <div class="meta">cell 435, 464</div></td>
+        <td><audio controls loop preload="none" src="audio/x0435_y0464_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.634 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0435_y0464_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.696 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from glass sounds”</div></td>
+        <td><audio controls loop preload="none" src="audio/x0435_y0464_direct_latent.wav"></audio><div class="meta">fitness 0.557 · gen 572</div></td>
+        <td><audio controls loop preload="none" src="audio/x0435_y0464_flow_env.wav"></audio><div class="meta">fitness 0.676 · gen 752</div></td>
+        <td><audio controls loop preload="none" src="audio/x0435_y0464_prompt_embed.wav"></audio><div class="meta">fitness 0.597 · gen 131</div></td>
+      </tr>
+      <tr>
+        <td class="n">4</td>
+        <td class="cell"><b>Tap</b>
+          <div class="meta">cell 354, 348</div></td>
+        <td><audio controls loop preload="none" src="audio/x0354_y0348_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.708 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0354_y0348_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.653 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from tap sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0354_y0348_flow_env.wav"></audio><div class="meta">fitness 0.634 · gen 506</div></td>
+        <td><audio controls loop preload="none" src="audio/x0354_y0348_prompt_embed.wav"></audio><div class="meta">fitness 0.722 · gen 790</div></td>
+      </tr>
+      <tr>
+        <td class="n">5</td>
+        <td class="cell"><b>Engine</b>
+          <div class="meta">cell 337, 494</div></td>
+        <td><audio controls loop preload="none" src="audio/x0337_y0494_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.629 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0337_y0494_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.615 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from engine sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0337_y0494_flow_env.wav"></audio><div class="meta">fitness 0.492 · gen 601</div></td>
+        <td><audio controls loop preload="none" src="audio/x0337_y0494_prompt_embed.wav"></audio><div class="meta">fitness 0.698 · gen 657</div></td>
+      </tr>
+      <tr>
+        <td class="n">6</td>
+        <td class="cell"><b>Scratch</b>
+          <div class="meta">cell 468, 360</div></td>
+        <td><audio controls loop preload="none" src="audio/x0468_y0360_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.654 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0468_y0360_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.694 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from scratch sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0468_y0360_flow_env.wav"></audio><div class="meta">fitness 0.685 · gen 163</div></td>
+        <td><audio controls loop preload="none" src="audio/x0468_y0360_prompt_embed.wav"></audio><div class="meta">fitness 0.692 · gen 848</div></td>
+      </tr>
+      <tr>
+        <td class="n">7</td>
+        <td class="cell"><b>Mechanisms</b>
+          <div class="meta">cell 398, 379</div></td>
+        <td><audio controls loop preload="none" src="audio/x0398_y0379_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.668 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0398_y0379_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.587 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from mechanisms sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0398_y0379_flow_env.wav"></audio><div class="meta">fitness 0.618 · gen 292</div></td>
+        <td><audio controls loop preload="none" src="audio/x0398_y0379_prompt_embed.wav"></audio><div class="meta">fitness 0.691 · gen 506</div></td>
+      </tr>
+      <tr>
+        <td class="n">8</td>
+        <td class="cell"><b>Thump, thud</b>
+          <div class="meta">cell 454, 455</div></td>
+        <td><audio controls loop preload="none" src="audio/x0454_y0455_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.658 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0454_y0455_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.619 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from thump, thud sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0454_y0455_flow_env.wav"></audio><div class="meta">fitness 0.627 · gen 702</div></td>
+        <td><audio controls loop preload="none" src="audio/x0454_y0455_prompt_embed.wav"></audio><div class="meta">fitness 0.681 · gen 894</div></td>
+      </tr>
+      <tr>
+        <td class="n">9</td>
+        <td class="cell"><b>Crack</b>
+          <div class="meta">cell 434, 378</div></td>
+        <td><audio controls loop preload="none" src="audio/x0434_y0378_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.605 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0434_y0378_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.652 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from crack sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0434_y0378_flow_env.wav"></audio><div class="meta">fitness 0.684 · gen 577</div></td>
+        <td><audio controls loop preload="none" src="audio/x0434_y0378_prompt_embed.wav"></audio><div class="meta">fitness 0.672 · gen 328</div></td>
+      </tr>
+      <tr>
+        <td class="n">10</td>
+        <td class="cell"><b>Clip-clop</b>
+          <div class="meta">cell 83, 82</div></td>
+        <td><audio controls loop preload="none" src="audio/x0083_y0082_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.646 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0083_y0082_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.690 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from clip-clop sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0083_y0082_flow_env.wav"></audio><div class="meta">fitness 0.670 · gen 683</div></td>
+        <td><audio controls loop preload="none" src="audio/x0083_y0082_prompt_embed.wav"></audio><div class="meta">fitness 0.666 · gen 113</div></td>
+      </tr>
+      <tr>
+        <td class="n">11</td>
+        <td class="cell"><b>Heart sounds, heartbeat</b>
+          <div class="meta">cell 59, 60</div></td>
+        <td><audio controls loop preload="none" src="audio/x0059_y0060_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.568 · YAMNet heard: <span class="miss">Heart murmur</span></div><audio controls loop preload="none" src="audio/x0059_y0060_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.595 · YAMNet heard: <span class="hit">Heart sounds, heartbeat</span></div><div class="prompt">“drum loop made from heart sounds, heartbeat sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0059_y0060_flow_env.wav"></audio><div class="meta">fitness 0.621 · gen 777</div></td>
+        <td><audio controls loop preload="none" src="audio/x0059_y0060_prompt_embed.wav"></audio><div class="meta">fitness 0.659 · gen 320</div></td>
+      </tr>
+      <tr>
+        <td class="n">12</td>
+        <td class="cell"><b>Crumpling, crinkling</b>
+          <div class="meta">cell 473, 378</div></td>
+        <td><audio controls loop preload="none" src="audio/x0473_y0378_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.677 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0473_y0378_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.624 · YAMNet heard: <span class="miss">Whack, thwack</span></div><div class="prompt">“drum loop made from crumpling, crinkling sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0473_y0378_flow_env.wav"></audio><div class="meta">fitness 0.664 · gen 618</div></td>
+        <td><audio controls loop preload="none" src="audio/x0473_y0378_prompt_embed.wav"></audio><div class="meta">fitness 0.624 · gen 849</div></td>
+      </tr>
+      <tr>
+        <td class="n">13</td>
+        <td class="cell"><b>Typing</b>
+          <div class="meta">cell 378, 420</div></td>
+        <td><audio controls loop preload="none" src="audio/x0378_y0420_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.697 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0378_y0420_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.685 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from typing sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0378_y0420_prompt_embed.wav"></audio><div class="meta">fitness 0.622 · gen 209</div></td>
+      </tr>
+      <tr>
+        <td class="n">14</td>
+        <td class="cell"><b>Thunderstorm</b>
+          <div class="meta">cell 280, 281</div></td>
+        <td><audio controls loop preload="none" src="audio/x0280_y0281_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.608 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0280_y0281_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.563 · YAMNet heard: <span class="hit">Thunderstorm</span></div><div class="prompt">“drum loop made from thunderstorm sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0280_y0281_flow_env.wav"></audio><div class="meta">fitness 0.608 · gen 424</div></td>
+        <td><audio controls loop preload="none" src="audio/x0280_y0281_prompt_embed.wav"></audio><div class="meta">fitness 0.608 · gen 310</div></td>
+      </tr>
+      <tr>
+        <td class="n">15</td>
+        <td class="cell"><b>Skateboard</b>
+          <div class="meta">cell 336, 454</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0454_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.658 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0336_y0454_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.673 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from skateboard sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0454_flow_env.wav"></audio><div class="meta">fitness 0.613 · gen 959</div></td>
+        <td><audio controls loop preload="none" src="audio/x0336_y0454_prompt_embed.wav"></audio><div class="meta">fitness 0.596 · gen 982</div></td>
+      </tr>
+      <tr>
+        <td class="n">16</td>
+        <td class="cell"><b>Fire</b>
+          <div class="meta">cell 292, 336</div></td>
+        <td><audio controls loop preload="none" src="audio/x0292_y0336_prompt_only_seed0.wav"></audio><div class="meta">seed 0 · fitness 0.656 · YAMNet heard: <span class="miss">Music</span></div><audio controls loop preload="none" src="audio/x0292_y0336_prompt_only_seed1.wav"></audio><div class="meta">seed 1 · fitness 0.648 · YAMNet heard: <span class="miss">Music</span></div><div class="prompt">“drum loop made from fire sounds”</div></td>
+        <td><span class="empty">cell not reached</span></td>
+        <td><audio controls loop preload="none" src="audio/x0292_y0336_flow_env.wav"></audio><div class="meta">fitness 0.612 · gen 907</div></td>
+        <td><audio controls loop preload="none" src="audio/x0292_y0336_prompt_embed.wav"></audio><div class="meta">fitness 0.562 · gen 834</div></td>
+      </tr>
+  </tbody>
+</table>
+<footer>Built by build_supp_favorites.py from ui/favorites.json of the Prompt-Embed run; the Flow-Env and Direct-Latent
+columns take the fittest occupant of the cell from each run's ui/state.json; the “drum loop” alone clips are the sa3_prompt_set
+(small-music, seeds varied); the prompt-only column is the sa3_class_drumloop set
+(small-music, seed 0) plus the extra seeds of supp_prompt_only_seeds.py --single-class. Wavs are copied into audio/ beside this page.</footer>
+</main>
+<script>
+  // One clip at a time: starting a player pauses whichever other one is playing.
+  // Every player loops (the clips are 5 s), so it keeps going until paused or replaced.
+  document.addEventListener("play", (e) => {
+    for (const a of document.querySelectorAll("audio")) {
+      if (a !== e.target && !a.paused) { a.pause(); a.currentTime = 0; }
+    }
+  }, true);
+</script>
+</body></html>

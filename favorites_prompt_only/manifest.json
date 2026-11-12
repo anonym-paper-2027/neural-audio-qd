@@ -1,0 +1,1256 @@
+[
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   383,
+   385
+  ],
+  "classes": [
+   "Telephone",
+   "Ringtone"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0383_y0385_g000852_prompt_embed.wav",
+   "fitness": 0.6842,
+   "generation": 852
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from telephone sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_383_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Ding"
+     ],
+     "clap": 0.10813962668180466,
+     "pq": 7.353391170501709,
+     "fitness": 0.5993871569633484
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_383_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Mallet percussion"
+     ],
+     "clap": 0.12333080172538757,
+     "pq": 7.394341945648193,
+     "fitness": 0.6061076104640961
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_383_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Vehicle horn, car horn, honking"
+     ],
+     "clap": 0.2982305884361267,
+     "pq": 8.401768684387207,
+     "fitness": 0.6968807101249694
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   349,
+   385
+  ],
+  "classes": [
+   "Doorbell",
+   "Ringtone"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0349_y0385_g000235_prompt_embed.wav",
+   "fitness": 0.666721,
+   "generation": 235
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from doorbell sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_349_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Doorbell",
+      "Ding"
+     ],
+     "clap": 0.23266446590423584,
+     "pq": 8.383010864257812,
+     "fitness": 0.6718244314193725
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_349_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Mallet percussion",
+      "Marimba, xylophone"
+     ],
+     "clap": 0.2550053596496582,
+     "pq": 8.311888694763184,
+     "fitness": 0.6784242272377015
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_349_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Bell"
+     ],
+     "clap": 0.2893810272216797,
+     "pq": 8.528057098388672,
+     "fitness": 0.6967193126678467
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   436,
+   435
+  ],
+  "classes": [
+   "Chink, clink",
+   "Glass"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0436_y0435_g000247_prompt_embed.wav",
+   "fitness": 0.654779,
+   "generation": 247
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from chink, clink sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_436_prompt_only_seed0.wav",
+     "yamnet": [
+      "Alarm",
+      "Fire alarm",
+      "Silence"
+     ],
+     "clap": -0.05808915197849274,
+     "pq": 6.274074554443359,
+     "fitness": 0.5100684523582458
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_436_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Musical instrument",
+      "Violin, fiddle"
+     ],
+     "clap": 0.1768752932548523,
+     "pq": 7.906520366668701,
+     "fitness": 0.6389912664890289
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_436_prompt_only_seed2.wav",
+     "yamnet": [
+      "Alarm",
+      "Silence",
+      "Fire alarm"
+     ],
+     "clap": -0.056381240487098694,
+     "pq": 5.999704360961914,
+     "fitness": 0.5038496494293213
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   322,
+   323
+  ],
+  "classes": [
+   "Rail transport",
+   "Train"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0322_y0323_g000712_prompt_embed.wav",
+   "fitness": 0.647919,
+   "generation": 712
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from rail transport sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_322_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Vehicle horn, car horn, honking",
+      "Air horn, truck horn"
+     ],
+     "clap": 0.2260037362575531,
+     "pq": 5.748615741729736,
+     "fitness": 0.6034668207168579
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_322_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Speech",
+      "Synthesizer"
+     ],
+     "clap": 0.06011078879237175,
+     "pq": 3.4977331161499023,
+     "fitness": 0.48498488068580625
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_322_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Keyboard (musical)"
+     ],
+     "clap": 0.194362610578537,
+     "pq": 7.848462104797363,
+     "fitness": 0.6440975427627563
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   294,
+   300
+  ],
+  "classes": [
+   "Vehicle",
+   "Motor vehicle (road)"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0294_y0300_g000577_prompt_embed.wav",
+   "fitness": 0.647371,
+   "generation": 577
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from vehicle sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_294_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Cowbell"
+     ],
+     "clap": 0.3229203224182129,
+     "pq": 8.213801383972168,
+     "fitness": 0.701440155506134
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_294_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.13158300518989563,
+     "pq": 4.71457576751709,
+     "fitness": 0.5422080099582672
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_294_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Keyboard (musical)"
+     ],
+     "clap": 0.132117360830307,
+     "pq": 6.947622299194336,
+     "fitness": 0.5982345938682556
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   337,
+   130
+  ],
+  "classes": [
+   "Engine",
+   "Rattle"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0337_y0130_g000589_prompt_embed.wav",
+   "fitness": 0.633215,
+   "generation": 589
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from engine sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_337_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Electronic music"
+     ],
+     "clap": 0.3553183078765869,
+     "pq": 8.18265438079834,
+     "fitness": 0.712810754776001
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_337_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.21490874886512756,
+     "pq": 8.041088104248047,
+     "fitness": 0.6566179871559144
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_337_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Cacophony",
+      "Silence"
+     ],
+     "clap": 0.19618001580238342,
+     "pq": 7.923457145690918,
+     "fitness": 0.6466539382934571
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   88,
+   67
+  ],
+  "classes": [
+   "Pig",
+   "Animal"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0088_y0067_g000528_prompt_embed.wav",
+   "fitness": 0.633144,
+   "generation": 528
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from pig sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_088_prompt_only_seed0.wav",
+     "yamnet": [
+      "Glass",
+      "Chink, clink",
+      "Beep, bleep"
+     ],
+     "clap": 0.07606779783964157,
+     "pq": 7.667157173156738,
+     "fitness": 0.5952043414115906
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_088_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Wood block"
+     ],
+     "clap": 0.025564182549715042,
+     "pq": 6.9799346923828125,
+     "fitness": 0.5590849399566651
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_088_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Radio"
+     ],
+     "clap": 0.16853585839271545,
+     "pq": 7.898214340209961,
+     "fitness": 0.6356563091278076
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   93,
+   101
+  ],
+  "classes": [
+   "Fowl",
+   "Goose"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0093_y0101_g000288_prompt_embed.wav",
+   "fitness": 0.627249,
+   "generation": 288
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from fowl sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_093_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Sound effect"
+     ],
+     "clap": 0.2652718424797058,
+     "pq": 5.969111442565918,
+     "fitness": 0.6237047493457795
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_093_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Keyboard (musical)"
+     ],
+     "clap": 0.2306818962097168,
+     "pq": 7.74904727935791,
+     "fitness": 0.6552318930625916
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_093_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Sigh",
+      "Breathing"
+     ],
+     "clap": 0.15100155770778656,
+     "pq": 7.082070827484131,
+     "fitness": 0.6086773753166199
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   76,
+   67
+  ],
+  "classes": [
+   "Cat",
+   "Animal"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0076_y0067_g000141_prompt_embed.wav",
+   "fitness": 0.610965,
+   "generation": 141
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from cat sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_076_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Wind instrument, woodwind instrument"
+     ],
+     "clap": 0.12868386507034302,
+     "pq": 7.381871700286865,
+     "fitness": 0.6078032195568085
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_076_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Keyboard (musical)",
+      "Silence"
+     ],
+     "clap": 0.21151897311210632,
+     "pq": 5.746484756469727,
+     "fitness": 0.597981745004654
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_076_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Keyboard (musical)"
+     ],
+     "clap": 0.18289609253406525,
+     "pq": 7.68641471862793,
+     "fitness": 0.635746419429779
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   283,
+   426
+  ],
+  "classes": [
+   "Rain",
+   "Fireworks"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0283_y0426_g000836_prompt_embed.wav",
+   "fitness": 0.545036,
+   "generation": 836
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from rain sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.39638692140579224,
+     "pq": 8.303291320800781,
+     "fitness": 0.7312273263931275
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Pizzicato"
+     ],
+     "clap": 0.23354211449623108,
+     "pq": 8.390256881713867,
+     "fitness": 0.6723347187042237
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Musical instrument",
+      "Flute"
+     ],
+     "clap": 0.31449756026268005,
+     "pq": 8.47659683227539,
+     "fitness": 0.7048515319824219
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_synthriff_g1000",
+  "cell": [
+   283,
+   378
+  ],
+  "classes": [
+   "Rain",
+   "Typing"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_x0283_y0378_g000371_prompt_embed.wav",
+   "fitness": 0.52284,
+   "generation": 371
+  },
+  "prompt_only": {
+   "prompt": "melodic synth riff made from rain sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.39638692140579224,
+     "pq": 8.303291320800781,
+     "fitness": 0.7312273263931275
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Pizzicato"
+     ],
+     "clap": 0.23354211449623108,
+     "pq": 8.390256881713867,
+     "fitness": 0.6723347187042237
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_synthriff_g1000_283_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Musical instrument",
+      "Flute"
+     ],
+     "clap": 0.31449756026268005,
+     "pq": 8.47659683227539,
+     "fitness": 0.7048515319824219
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   325,
+   323
+  ],
+  "classes": [
+   "Train horn",
+   "Train"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0325_y0323_g000290_prompt_embed.wav",
+   "fitness": 0.679097,
+   "generation": 290
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from train horn sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_325_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.1754261553287506,
+     "pq": 7.759382724761963,
+     "fitness": 0.6347693800926208
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_325_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Ambient music",
+      "Sound effect"
+     ],
+     "clap": 0.1485365629196167,
+     "pq": 5.995063304901123,
+     "fitness": 0.5805777788162232
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_325_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "New-age music",
+      "Ambient music"
+     ],
+     "clap": 0.32276543974876404,
+     "pq": 7.718381881713867,
+     "fitness": 0.6889966130256653
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   519,
+   382
+  ],
+  "classes": [
+   "Radio",
+   "Alarm"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0519_y0382_g000733_prompt_embed.wav",
+   "fitness": 0.674562,
+   "generation": 733
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from radio sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_519_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Bell"
+     ],
+     "clap": 0.201673686504364,
+     "pq": 7.688697338104248,
+     "fitness": 0.6428450882434845
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_519_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Wind instrument, woodwind instrument"
+     ],
+     "clap": 0.16713275015354156,
+     "pq": 7.109774112701416,
+     "fitness": 0.6154191136360169
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_519_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "New-age music",
+      "Ambient music"
+     ],
+     "clap": 0.3345404267311096,
+     "pq": 7.402353763580322,
+     "fitness": 0.6855114817619323
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   324,
+   322
+  ],
+  "classes": [
+   "Train whistle",
+   "Rail transport"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0324_y0322_g000816_prompt_embed.wav",
+   "fitness": 0.664917,
+   "generation": 816
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from train whistle sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_324_prompt_only_seed0.wav",
+     "yamnet": [
+      "Rail transport",
+      "Train",
+      "Train horn"
+     ],
+     "clap": 0.08920013904571533,
+     "pq": 5.701286792755127,
+     "fitness": 0.5509822368621826
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_324_prompt_only_seed1.wav",
+     "yamnet": [
+      "Vehicle",
+      "Sound effect",
+      "Whoosh, swoosh, swish"
+     ],
+     "clap": 0.13078387081623077,
+     "pq": 5.126340389251709,
+     "fitness": 0.5522024631500244
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_324_prompt_only_seed2.wav",
+     "yamnet": [
+      "Vehicle",
+      "Motor vehicle (road)",
+      "Car"
+     ],
+     "clap": 0.15350612998008728,
+     "pq": 5.190376281738281,
+     "fitness": 0.5623242020606994
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   397,
+   396
+  ],
+  "classes": [
+   "Steam whistle",
+   "Whistle"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0397_y0396_g000105_prompt_embed.wav",
+   "fitness": 0.659839,
+   "generation": 105
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from steam whistle sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_397_prompt_only_seed0.wav",
+     "yamnet": [
+      "Hiss",
+      "Snake",
+      "Steam"
+     ],
+     "clap": 0.009710868820548058,
+     "pq": 5.316891670227051,
+     "fitness": 0.5115638971328735
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_397_prompt_only_seed1.wav",
+     "yamnet": [
+      "Inside, small room",
+      "Fire",
+      "Crackle"
+     ],
+     "clap": -0.016811668872833252,
+     "pq": 6.474345684051514,
+     "fitness": 0.5305542588233948
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_397_prompt_only_seed2.wav",
+     "yamnet": [
+      "Hiss",
+      "Snake",
+      "Steam"
+     ],
+     "clap": 0.045171674340963364,
+     "pq": 6.178066253662109,
+     "fitness": 0.5463909983634949
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   130,
+   129
+  ],
+  "classes": [
+   "Rattle",
+   "Snake"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0130_y0129_g000606_prompt_embed.wav",
+   "fitness": 0.659576,
+   "generation": 606
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from rattle sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_130_prompt_only_seed0.wav",
+     "yamnet": [
+      "Coin (dropping)",
+      "Glass",
+      "Mechanisms"
+     ],
+     "clap": 0.03469069302082062,
+     "pq": 6.95399284362793,
+     "fitness": 0.5618588328361511
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_130_prompt_only_seed1.wav",
+     "yamnet": [
+      "Vehicle",
+      "Helicopter",
+      "Aircraft"
+     ],
+     "clap": 0.007285242900252342,
+     "pq": 5.354821681976318,
+     "fitness": 0.511602520942688
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_130_prompt_only_seed2.wav",
+     "yamnet": [
+      "Crackle",
+      "Fire",
+      "Explosion"
+     ],
+     "clap": -0.06103752553462982,
+     "pq": 7.288219451904297,
+     "fitness": 0.5343164086341858
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   104,
+   382
+  ],
+  "classes": [
+   "Roaring cats (lions, tigers)",
+   "Alarm"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0104_y0382_g000184_prompt_embed.wav",
+   "fitness": 0.657668,
+   "generation": 184
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from roaring cats (lions, tigers) sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_104_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Vehicle horn, car horn, honking"
+     ],
+     "clap": 0.14866720139980316,
+     "pq": 7.998297691345215,
+     "fitness": 0.6307076334953308
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_104_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Vehicle"
+     ],
+     "clap": 0.1386510133743286,
+     "pq": 5.22047758102417,
+     "fitness": 0.5575060844421387
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_104_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Orchestra"
+     ],
+     "clap": 0.05674632638692856,
+     "pq": 8.18839168548584,
+     "fitness": 0.6009896636009217
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   35,
+   382
+  ],
+  "classes": [
+   "Whistling",
+   "Alarm"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0035_y0382_g000275_prompt_embed.wav",
+   "fitness": 0.651997,
+   "generation": 275
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from whistling sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_035_prompt_only_seed0.wav",
+     "yamnet": [
+      "Whistle",
+      "Whistling",
+      "Alarm"
+     ],
+     "clap": -0.011300896294414997,
+     "pq": 5.334094047546387,
+     "fitness": 0.5041145205497741
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_035_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Musical instrument",
+      "Organ"
+     ],
+     "clap": 0.1311987340450287,
+     "pq": 6.015124320983887,
+     "fitness": 0.5745776295661926
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_035_prompt_only_seed2.wav",
+     "yamnet": [
+      "Whistling",
+      "Silence",
+      "Owl"
+     ],
+     "clap": -0.046347085386514664,
+     "pq": 6.000466346740723,
+     "fitness": 0.5076315104961395
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   131,
+   382
+  ],
+  "classes": [
+   "Whale vocalization",
+   "Alarm"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0131_y0382_g000526_prompt_embed.wav",
+   "fitness": 0.651281,
+   "generation": 526
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from whale vocalization sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_131_prompt_only_seed0.wav",
+     "yamnet": [
+      "Chant",
+      "Mantra",
+      "Speech"
+     ],
+     "clap": 0.008723549544811249,
+     "pq": 5.8404316902160645,
+     "fitness": 0.5242821037769317
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_131_prompt_only_seed1.wav",
+     "yamnet": [
+      "Chant",
+      "Vocal music",
+      "Mantra"
+     ],
+     "clap": 0.04141295701265335,
+     "pq": 4.934908866882324,
+     "fitness": 0.5139025926589966
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_131_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Musical instrument",
+      "Organ"
+     ],
+     "clap": 0.013855693861842155,
+     "pq": 5.025250434875488,
+     "fitness": 0.50582714676857
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   67,
+   103
+  ],
+  "classes": [
+   "Animal",
+   "Wild animals"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0067_y0103_g000374_prompt_embed.wav",
+   "fitness": 0.639949,
+   "generation": 374
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from animal sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_067_prompt_only_seed0.wav",
+     "yamnet": [
+      "Opera",
+      "Classical music",
+      "Alarm"
+     ],
+     "clap": 0.07257796823978424,
+     "pq": 6.695456027984619,
+     "fitness": 0.5696031332015992
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_067_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Silence",
+      "Musical instrument"
+     ],
+     "clap": 0.2343214899301529,
+     "pq": 4.5249786376953125,
+     "fitness": 0.5759950041770935
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_067_prompt_only_seed2.wav",
+     "yamnet": [
+      "Silence",
+      "Inside, small room",
+      "Hum"
+     ],
+     "clap": 0.13462701439857483,
+     "pq": 4.514802932739258,
+     "fitness": 0.5383552074432373
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   405,
+   398
+  ],
+  "classes": [
+   "Sewing machine",
+   "Mechanisms"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0405_y0398_g000537_prompt_embed.wav",
+   "fitness": 0.633983,
+   "generation": 537
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from sewing machine sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_405_prompt_only_seed0.wav",
+     "yamnet": [
+      "Music",
+      "Marimba, xylophone",
+      "Mallet percussion"
+     ],
+     "clap": 0.21150338649749756,
+     "pq": 4.7102508544921875,
+     "fitness": 0.5720700263977051
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_405_prompt_only_seed1.wav",
+     "yamnet": [
+      "Music",
+      "Organ",
+      "Hammond organ"
+     ],
+     "clap": 0.2704053521156311,
+     "pq": 6.444028854370117,
+     "fitness": 0.6375027060508728
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_405_prompt_only_seed2.wav",
+     "yamnet": [
+      "Music",
+      "Organ",
+      "Musical instrument"
+     ],
+     "clap": 0.2980595827102661,
+     "pq": 6.731106758117676,
+     "fitness": 0.6550500273704529
+    }
+   ]
+  }
+ },
+ {
+  "run": "qd_conf02_embed_sa3small_ambientpad_g1000_wsl",
+  "cell": [
+   328,
+   294
+  ],
+  "classes": [
+   "Subway, metro, underground",
+   "Vehicle"
+  ],
+  "prompt_embed": {
+   "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_x0328_y0294_g000305_prompt_embed.wav",
+   "fitness": 0.544657,
+   "generation": 305
+  },
+  "prompt_only": {
+   "prompt": "ambient pad made from subway, metro, underground sounds",
+   "clips": [
+    {
+     "seed": 0,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_328_prompt_only_seed0.wav",
+     "yamnet": [
+      "Silence",
+      "Glass",
+      "Chink, clink"
+     ],
+     "clap": 0.03986530378460884,
+     "pq": 7.585352897644043,
+     "fitness": 0.5795832931995392
+    },
+    {
+     "seed": 1,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_328_prompt_only_seed1.wav",
+     "yamnet": [
+      "Whoosh, swoosh, swish",
+      "Sound effect",
+      "Arrow"
+     ],
+     "clap": 0.14998885989189148,
+     "pq": 6.758706092834473,
+     "fitness": 0.6002134859561921
+    },
+    {
+     "seed": 2,
+     "wav": "audio/qd_conf02_embed_sa3small_ambientpad_g1000_wsl_328_prompt_only_seed2.wav",
+     "yamnet": [
+      "Silence",
+      "Hum",
+      "Throbbing"
+     ],
+     "clap": 0.1678701937198639,
+     "pq": 5.743590354919434,
+     "fitness": 0.5815410852432251
+    }
+   ]
+  }
+ }
+]
