@@ -3,9 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Examples of generated sounds: “ambient pad” and “melodic synth riff”</title>
 <style>
-  :root { --fg:#1b1b1b; --muted:#6b6b6b; --line:#dcdcdc; --bg:#fff; --head:#f3f3f3; --hit:#1a7f37; --miss:#a40e26; }
+  :root { --fg:#1b1b1b; --muted:#6b6b6b; --line:#dcdcdc; --bg:#fff; --head:#f3f3f3; --hit:#1a7f37; --miss:#a40e26; --tint:#f2f6fc; --tint-head:#e6eef9; }
   @media (prefers-color-scheme: dark) {
-    :root { --fg:#e8e8e8; --muted:#9a9a9a; --line:#333; --bg:#141414; --head:#1f1f1f; --hit:#4cc26a; --miss:#f0637a; }
+    :root { --fg:#e8e8e8; --muted:#9a9a9a; --line:#333; --bg:#141414; --head:#1f1f1f; --hit:#4cc26a; --miss:#f0637a; --tint:#18202b; --tint-head:#1f2a38; }
   }
   body { margin:0; padding:24px 16px 48px; font:15px/1.45 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color:var(--fg); background:var(--bg); }
   main { max-width:1400px; margin:0 auto; }
@@ -23,6 +23,8 @@
   audio { width:100%; min-width:150px; max-width:240px; height:32px; display:block; }
   .meta { color:var(--muted); font-size:12.5px; margin-top:4px; }
   .prompt { font-size:12.5px; margin:0 0 6px; font-style:italic; }
+  td:nth-child(4) { background:var(--tint); }
+  th:nth-child(4) { background:var(--tint-head); }
   .empty { color:var(--muted); font-style:italic; }
   .hit { color:var(--hit); } .miss { color:var(--miss); }
   div.base { margin:0 0 18px; padding:12px 14px; background:var(--head); border-radius:6px; }
