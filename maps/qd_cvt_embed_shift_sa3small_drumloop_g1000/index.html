@@ -2534,7 +2534,7 @@ function paintFitnessWindow() {
   hi.value = Math.round(S.options.fitHi * 1000);
   const at = (t) => d ? (d.f0 + (d.f1 - d.f0) * t).toFixed(3) : "—";
   document.getElementById("fitrange-val").textContent =
-    `${at(S.options.fitLo)} – ${at(S.options.fitHi)}`;
+    `≥ ${at(S.options.fitLo)}`;
   document.getElementById("seg-fitrange").classList.toggle(
     "on", S.options.fitLo > 0 || S.options.fitHi < 1);
 }
@@ -3441,7 +3441,6 @@ function renderStats() {
     if (run.k) bits.push(`k=${run.k}`);
   }
   if (run.fitness) bits.push(`${run.fitness} fitness`);
-  if (run.prompt) bits.push(`“${run.prompt}”`);
   document.getElementById("run-sub").textContent = bits.join(" · ");
 }
 
@@ -5187,7 +5186,9 @@ boot();
 </script>
 
 <style id="supp-style">
-  #runpick, #spark-coverage, #spark-qd, #spark-added, #spark-diversity, #variations, #favourites, #studio, #btn-star, #lbl-recent, #lbl-audition, #card-top, #seg-view, #seg-colour, #seg-fitrange, #seg-confmin, #seg-scheme, #seg-kinds, #lbl-allclasses, #lbl-japanese, #lbl-audible { display: none !important; }
+  #supp-prompt { font-size: 14px; font-weight: 600; white-space: nowrap; }
+  #supp-prompt .cap { font-size: 12px; font-weight: 400; color: var(--text-muted); margin-right: 8px; }
+  #runpick, #spark-coverage, #spark-qd, #spark-added, #spark-diversity, #variations, #favourites, #studio, #btn-star, #lbl-recent, #lbl-audition, #card-top, #seg-view, #seg-colour, #seg-confmin, #opt-fithi, #seg-scheme, #lbl-allclasses, #lbl-japanese, #lbl-audible { display: none !important; }
 </style>
 <script id="supp-script">
   // Supplementary copy: a finished run, read-only. Hover-to-play is on from the
@@ -5197,6 +5198,30 @@ boot();
     const opt = document.getElementById("opt-audition");
     if (opt && !opt.checked) { opt.checked = true; opt.dispatchEvent(new Event("change")); }
   });
+  // Fitness filter: a lower bound only, 0.6 by default; "reset view" (and R) returns to it.
+  const FIT_DEFAULT = 0.6;
+  function setFitnessDefault() {
+    const d = S.domain;
+    if (!d) return false;
+    const t = (FIT_DEFAULT - d.f0) / (d.f1 - d.f0);
+    S.options.fitLo = Math.min(1, Math.max(0, t));
+    S.options.fitHi = 1;
+    paintFitnessWindow();
+    renderTop();
+    return true;
+  }
+  (function waitForDomain() { if (!setFitnessDefault()) setTimeout(waitForDomain, 100); })();
+  document.getElementById("btn-reset").addEventListener("click", setFitnessDefault);
+  // The run's prompt, large, in the header.
+  (function showPrompt() {
+    const prompt = S.meta && S.meta.run && S.meta.run.prompt;
+    if (!prompt) { setTimeout(showPrompt, 100); return; }
+    const el = document.createElement("span");
+    el.id = "supp-prompt";
+    el.innerHTML = '<span class="cap">Prompt</span>';
+    el.append(`“${prompt}”`);
+    document.getElementById("run-title").after(el);
+  })();
 </script>
 </body>
 </html>
