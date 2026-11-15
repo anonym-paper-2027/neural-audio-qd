@@ -70,6 +70,13 @@ h2 { font: 600 18px/1.3 var(--display); margin: 0; }
 .nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .btn { font: 500 14px var(--body); padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
 .btn:disabled { color: var(--muted); cursor: not-allowed; }
+.intake { display: grid; gap: 14px; }
+.intake h2 { margin: 0; font-size: 18px; }
+.intake p { margin: 0; color: var(--muted); font-size: 14px; }
+.exp { display: grid; gap: 8px; }
+.exp .btn { text-align: left; padding: 11px 14px; font-size: 15px; }
+.exp .btn:hover { border-color: var(--ink); }
+
 .dots { display: flex; flex-wrap: wrap; gap: 6px; }
 .dot { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); font: 11px var(--mono); color: var(--muted); cursor: pointer; padding: 0; }
 .dot.done { background: var(--accent-soft); color: var(--ink); border-color: var(--accent-soft); }
@@ -102,7 +109,19 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </header>
   <div class="banner" id="status" hidden></div>
 
-  <div id="view-vote" style="display:grid;gap:18px">
+  <article class="pair intake" id="view-intake" hidden>
+    <h2>Before you start</h2>
+    <p>How long have you been making music (composing, producing or arranging)?</p>
+    <div class="exp" id="exp">
+      <button class="btn" data-v="none">I have never made music</button>
+      <button class="btn" data-v="<1">Less than 1 year</button>
+      <button class="btn" data-v="1-3">1–3 years</button>
+      <button class="btn" data-v="3-10">3–10 years</button>
+      <button class="btn" data-v="10+">More than 10 years</button>
+    </div>
+  </article>
+
+  <div id="view-vote" style="display:grid;gap:18px" hidden>
     <div class="progress"><span id="prog-text">0 / 24 rated</span><div class="bar"><i id="prog-bar"></i></div></div>
     <article class="pair" id="pair">
       <div class="pair-head">
@@ -148,7 +167,7 @@ const ICON_PLAY = '<svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>'
 const ICON_STOP = '<svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>';
 const $ = (id) => document.getElementById(id);
 let PAIRS = [], N = 0;
-const S = { order: [], flip: {}, idx: 0, mine: {}, played: {}, pid: "" };
+const S = { order: [], flip: {}, idx: 0, mine: {}, played: {}, pid: "", exp: "" };
 
 function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
 function participant() {
@@ -229,7 +248,7 @@ function choose(k) {
   const p = cur(), sd = sides();
   S.mine[p.id] = k === 2 ? "tie" : sd[k];
   store("lt-mine", JSON.stringify(S.mine));
-  send({ participant: S.pid, a: p.a, b: p.b, choice: S.mine[p.id], left: sd[0], position: S.idx + 1 });
+  send({ participant: S.pid, a: p.a, b: p.b, choice: S.mine[p.id], left: sd[0], position: S.idx + 1, experience: S.exp });
   render();
   if (S.idx < N - 1) setTimeout(() => { if (cur().id === p.id) go(firstOpen(S.idx)); }, 450);
 }
@@ -261,6 +280,13 @@ try { S.mine = JSON.parse(store("lt-mine") || "{}"); } catch (e) {}
 S.idx = Math.max(0, S.order.findIndex((pi) => !S.mine[PAIRS[pi].id]));
 render();
 flush();
+
+// Intake: music-making experience, asked once before the first pair.
+const EXP = ["none", "<1", "1-3", "3-10", "10+"];
+function showVote() { $("view-intake").hidden = true; $("view-vote").hidden = false; }
+S.exp = store("lt-exp") || "";
+if (EXP.includes(S.exp)) showVote(); else $("view-intake").hidden = false;
+document.querySelectorAll("#exp .btn").forEach((b) => b.onclick = () => { S.exp = b.dataset.v; store("lt-exp", S.exp); showVote(); window.scrollTo(0, 0); });
 </script>
 </body>
 </html>
