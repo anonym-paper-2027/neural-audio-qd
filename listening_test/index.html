@@ -184,20 +184,25 @@ function arrange(seed) {
   S.flip = {}; for (const p of PAIRS) S.flip[p.id] = r() < 0.5;
 }
 
-// Audio: one element per clip, one plays at a time.
-const audio = {}; let playing = null;
-function el(id) { if (!audio[id]) { const a = new Audio("audio/" + id + ".mp3"); a.preload = "auto"; a.addEventListener("timeupdate", paintTime); a.addEventListener("ended", () => { playing = null; paintPlay(); paintTime(); }); audio[id] = a; } return audio[id]; }
+// Audio: a single shared player; phones limit how many media elements a page may keep.
+const player = new Audio(); player.preload = "auto"; let playing = null;
+player.addEventListener("timeupdate", () => paintTime());
+player.addEventListener("ended", () => { playing = null; paintPlay(); paintTime(); });
 function cur() { return PAIRS[S.order[S.idx]]; }
 function sides() { const p = cur(); return S.flip[p.id] ? [p.b, p.a] : [p.a, p.b]; }
-function stop() { if (playing) { audio[playing].pause(); audio[playing].currentTime = 0; playing = null; } }
+function stop() { if (playing) { try { player.pause(); player.currentTime = 0; } catch (e) {} playing = null; } }
 function toggle(k) {
-  const id = sides()[k], a = el(id);
+  const id = sides()[k];
+  (S.played[cur().id] ||= new Set()).add(id);
   if (playing === id) stop();
-  else { stop(); a.currentTime = 0; a.play().catch(() => {}); playing = id; (S.played[cur().id] ||= new Set()).add(id); }
+  else {
+    stop(); playing = id;
+    try { player.src = "audio/" + id + ".mp3"; const r = player.play(); if (r && r.catch) r.catch(() => {}); } catch (e) {}
+  }
   paintPlay(); paintChoice();
 }
 function fmt(t) { t = Math.max(0, t || 0); return Math.floor(t / 60) + ":" + String(Math.floor(t % 60)).padStart(2, "0"); }
-function paintTime() { sides().forEach((id, k) => { const a = audio[id]; const d = a && isFinite(a.duration) ? a.duration : 5; const t = a ? a.currentTime : 0; $("pos-" + k).style.width = (100 * t / d) + "%"; $("time-" + k).textContent = fmt(t) + " / " + fmt(d); }); }
+function paintTime() { sides().forEach((id, k) => { const on = playing === id; const d = on && isFinite(player.duration) ? player.duration : 5; const t = on ? player.currentTime : 0; $("pos-" + k).style.width = (100 * t / d) + "%"; $("time-" + k).textContent = fmt(t) + " / " + fmt(d); }); }
 function paintPlay() { sides().forEach((id, k) => { const on = playing === id; $("play-" + k).innerHTML = on ? ICON_STOP : ICON_PLAY; $("play-" + k).setAttribute("aria-label", (on ? "Stop" : "Play") + " clip " + "AB"[k]); }); }
 function paintChoice() {
   const p = cur(), sd = sides(), heard = S.played[p.id] || new Set();
