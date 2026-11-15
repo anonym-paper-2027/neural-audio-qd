@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listening Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one pair at a time, two clip panels side by side (stacked on phones), results as split bars */
+:root {
+  --bg: #f3f4f6; --surface: #ffffff; --ink: #15171c; --muted: #5d6470; --line: #d9dce2;
+  --accent: #3446c4; --accent-ink: #ffffff; --accent-soft: #e4e7fb;
+  --c2: #8a8f99; --c1: #3446c4; --ok: #1d7a46;
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111318; --surface: #1a1d24; --ink: #e9ebf0; --muted: #9aa1ad; --line: #2c313b;
+  --accent: #8a98ff; --accent-ink: #10131c; --accent-soft: #252b4a; --c2: #7c828d; --c1: #8a98ff; --ok: #5cc98a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111318; --surface: #1a1d24; --ink: #e9ebf0; --muted: #9aa1ad; --line: #2c313b;
+  --accent: #8a98ff; --accent-ink: #10131c; --accent-soft: #252b4a; --c2: #7c828d; --c1: #8a98ff; --ok: #5cc98a; color-scheme: dark }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+main { max-width: 860px; margin: 0 auto; display: grid; gap: 22px; }
+h1 { font: 600 clamp(24px, 4.2vw, 34px)/1.15 var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font: 600 18px/1.3 var(--display); margin: 0; }
+.intro { display: grid; gap: 8px; }
+.intro p { margin: 0; color: var(--muted); max-width: 62ch; }
+.banner { padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--muted); font-size: 14px; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs button { font: 500 14px var(--body); background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted); padding: 8px 12px; cursor: pointer; margin-bottom: -1px; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.progress { display: flex; align-items: center; gap: 12px; font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { flex: 1; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s; }
+.pair { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 18px; }
+.pair-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.prompt-tag { font-size: 14px; color: var(--muted); }
+.prompt-tag b { color: var(--ink); font-weight: 600; }
+.pair-no { font: 13px var(--mono); color: var(--muted); }
+.clips { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .clips { grid-template-columns: 1fr; } }
+.clip { border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 14px; min-width: 0; }
+.clip.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; background: var(--accent-soft); }
+.clip-top { display: flex; align-items: center; gap: 14px; }
+.letter { font: 600 28px/1 var(--display); width: 1.2em; }
+.play { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+.play:hover { border-color: var(--ink); }
+.play svg { width: 20px; height: 20px; fill: currentColor; }
+.scrub { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.scrub .bar { flex: none; height: 4px; }
+.time { font: 12px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.choose { font: 600 15px var(--body); padding: 11px 14px; border-radius: 8px; border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; }
+.choose:hover:not(:disabled) { background: var(--accent); color: var(--accent-ink); }
+.clip.chosen .choose { background: var(--accent); color: var(--accent-ink); }
+.choose:disabled { border-color: var(--line); color: var(--muted); cursor: not-allowed; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; text-align: center; }
+.tie-row { display: flex; justify-content: center; }
+.tie { font: 500 14px var(--body); padding: 9px 22px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.tie:hover:not(:disabled) { border-color: var(--ink); }
+.tie.chosen { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.tie:disabled { color: var(--muted); cursor: not-allowed; }
+.split .t { background: var(--line); }
+.nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.btn { font: 500 14px var(--body); padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.btn:disabled { color: var(--muted); cursor: not-allowed; }
+.dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.dot { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); font: 11px var(--mono); color: var(--muted); cursor: pointer; padding: 0; }
+.dot.done { background: var(--accent-soft); color: var(--ink); border-color: var(--accent-soft); }
+.dot.here { border-color: var(--ink); color: var(--ink); }
+.done-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 10px; }
+.done-card p { margin: 0; color: var(--muted); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.results { display: grid; gap: 26px; }
+.results section { display: grid; gap: 12px; }
+.results p { margin: 0; color: var(--muted); max-width: 64ch; }
+.row { display: grid; grid-template-columns: minmax(0, 11em) 1fr auto; gap: 12px; align-items: center; font-size: 14px; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr auto; } .row .split { grid-column: 1 / -1; grid-row: 2; } }
+.row .lab { min-width: 0; overflow-wrap: anywhere; }
+.row .num { font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.split { display: flex; height: 14px; border-radius: 3px; overflow: hidden; background: var(--line); }
+.split i { display: block; height: 100%; }
+.split .a { background: var(--c1); } .split .b { background: var(--c2); }
+.split.ctl .a { background: var(--ink); opacity: .55; } .split.ctl .b { background: var(--c2); opacity: .55; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.empty { color: var(--muted); font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="intro">
+    <h1>Which one is more surprising, yet still musical?</h1>
+    <p>Each pair has two 5-second clips generated from the text prompt “drum loop”. Listen to both, then pick the one that surprises you more while still working as music, or "Can't decide". There are 24 pairs; it takes about 8 minutes. Headphones recommended. You can change an answer at any time.</p>
+  </header>
+  <div class="banner" id="status" hidden></div>
+
+  <div id="view-vote" style="display:grid;gap:18px">
+    <div class="progress"><span id="prog-text">0 / 24 rated</span><div class="bar"><i id="prog-bar"></i></div></div>
+    <article class="pair" id="pair">
+      <div class="pair-head">
+        <div class="pair-no" id="pair-no">Pair 1 of 24</div>
+      </div>
+      <div class="clips">
+        <div class="clip" id="clip-0">
+          <div class="clip-top"><span class="letter">A</span>
+            <button class="play" id="play-0" aria-label="Play clip A"></button>
+            <div class="scrub"><div class="bar"><i id="pos-0"></i></div><span class="time" id="time-0">0:00 / 0:05</span></div></div>
+          <button class="choose" id="choose-0" disabled>Choose A</button>
+        </div>
+        <div class="clip" id="clip-1">
+          <div class="clip-top"><span class="letter">B</span>
+            <button class="play" id="play-1" aria-label="Play clip B"></button>
+            <div class="scrub"><div class="bar"><i id="pos-1"></i></div><span class="time" id="time-1">0:00 / 0:05</span></div></div>
+          <button class="choose" id="choose-1" disabled>Choose B</button>
+        </div>
+      </div>
+      <div class="tie-row"><button class="tie" id="choose-2" disabled>Can't decide</button></div>
+      <p class="hint" id="hint">Play both clips to unlock the choice.</p>
+      <div class="nav">
+        <button class="btn" id="prev">Previous pair</button>
+        <button class="btn" id="next">Next pair</button>
+      </div>
+    </article>
+    <div class="done-card" id="done" hidden>
+      <h2>All 24 pairs rated. Thank you.</h2>
+      <p>Your answers have been sent. You can go back to any pair and change it; the latest answer counts.</p>
+    </div>
+    <div class="dots" id="dots" aria-label="Jump to pair"></div>
+  </div>
+</main>
+
+<script>
+// Paste the Apps Script web app URL here (ends with /exec).
+const ENDPOINT = "";
+
+// Clip ids and their group letter only; which group is which method is kept off this page.
+const GROUP = {"c01": "y", "c02": "w", "c03": "x", "c04": "w", "c05": "w", "c06": "x", "c07": "z", "c08": "y", "c09": "z", "c10": "y", "c11": "x", "c12": "w", "c13": "x", "c14": "y", "c15": "w", "c16": "x", "c17": "w", "c18": "w", "c19": "y", "c20": "y", "c21": "x", "c22": "x", "c23": "x", "c24": "x", "c25": "z", "c26": "w", "c27": "y", "c28": "z", "c29": "z", "c30": "w", "c31": "y", "c32": "w", "c33": "w", "c34": "z", "c35": "x", "c36": "y", "c37": "y", "c38": "z", "c39": "z", "c40": "z", "c41": "x", "c42": "y", "c43": "y", "c44": "y", "c45": "w", "c46": "z", "c47": "x", "c48": "x"};
+const PLAN = [["x", "y", 6], ["x", "z", 6], ["x", "w", 4], ["y", "z", 2], ["w", "z", 2], ["x", "x", 1], ["y", "y", 1], ["z", "z", 1], ["w", "w", 1]];
+const ICON_PLAY = '<svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>';
+const ICON_STOP = '<svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>';
+const $ = (id) => document.getElementById(id);
+let PAIRS = [], N = 0;
+const S = { order: [], flip: {}, idx: 0, mine: {}, played: {}, pid: "" };
+
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+function participant() {
+  let id = store("lt-participant");
+  if (!id || !/^[a-z0-9]{8,32}$/.test(id)) { id = Array.from(crypto.getRandomValues(new Uint8Array(10)), (b) => (b % 36).toString(36)).join(""); store("lt-participant", id); }
+  return id;
+}
+
+// Seeded pairing, order and sides: each participant gets their own random pairs, stable across reloads.
+function rng(seedStr) { let h = 2166136261; for (const c of seedStr) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => { h = Math.imul(h ^ (h >>> 15), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909); h ^= h >>> 16; return (h >>> 0) / 4294967296; }; }
+function shuffle(arr, r) { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function mk(a, b) { const [p, q] = [a, b].sort(); return { id: p + "-" + q, a: p, b: q }; }
+function arrange(seed) {
+  const r = rng(seed), pool = {}, queue = {};
+  for (const g of ["w", "x", "y", "z"]) pool[g] = Object.keys(GROUP).filter((c) => GROUP[c] === g);
+  const draw = (g, avoid) => {
+    for (let t = 0; t < 4; t++) {
+      if (!queue[g] || !queue[g].length) queue[g] = shuffle(pool[g], r);
+      const i = queue[g].findIndex((x) => x !== avoid);
+      if (i >= 0) return queue[g].splice(i, 1)[0];
+      queue[g] = [];
+    }
+    return pool[g].find((x) => x !== avoid);
+  };
+  PAIRS = []; const seen = new Set();
+  for (const [x, y, k] of PLAN) for (let i = 0; i < k; i++) {
+    let pr, tries = 0;
+    do { const a = draw(x); pr = mk(a, draw(y, a)); } while (seen.has(pr.id) && ++tries < 20);
+    seen.add(pr.id); PAIRS.push(pr);
+  }
+  N = PAIRS.length;
+  S.order = shuffle(PAIRS.map((_, i) => i), r);
+  S.flip = {}; for (const p of PAIRS) S.flip[p.id] = r() < 0.5;
+}
+
+// Audio: one element per clip, one plays at a time.
+const audio = {}; let playing = null;
+function el(id) { if (!audio[id]) { const a = new Audio("audio/" + id + ".mp3"); a.preload = "auto"; a.addEventListener("timeupdate", paintTime); a.addEventListener("ended", () => { playing = null; paintPlay(); paintTime(); }); audio[id] = a; } return audio[id]; }
+function cur() { return PAIRS[S.order[S.idx]]; }
+function sides() { const p = cur(); return S.flip[p.id] ? [p.b, p.a] : [p.a, p.b]; }
+function stop() { if (playing) { audio[playing].pause(); audio[playing].currentTime = 0; playing = null; } }
+function toggle(k) {
+  const id = sides()[k], a = el(id);
+  if (playing === id) stop();
+  else { stop(); a.currentTime = 0; a.play().catch(() => {}); playing = id; (S.played[cur().id] ||= new Set()).add(id); }
+  paintPlay(); paintChoice();
+}
+function fmt(t) { t = Math.max(0, t || 0); return Math.floor(t / 60) + ":" + String(Math.floor(t % 60)).padStart(2, "0"); }
+function paintTime() { sides().forEach((id, k) => { const a = audio[id]; const d = a && isFinite(a.duration) ? a.duration : 5; const t = a ? a.currentTime : 0; $("pos-" + k).style.width = (100 * t / d) + "%"; $("time-" + k).textContent = fmt(t) + " / " + fmt(d); }); }
+function paintPlay() { sides().forEach((id, k) => { const on = playing === id; $("play-" + k).innerHTML = on ? ICON_STOP : ICON_PLAY; $("play-" + k).setAttribute("aria-label", (on ? "Stop" : "Play") + " clip " + "AB"[k]); }); }
+function paintChoice() {
+  const p = cur(), sd = sides(), heard = S.played[p.id] || new Set();
+  const ready = sd.every((id) => heard.has(id)) || !!S.mine[p.id];
+  sd.forEach((id, k) => { $("choose-" + k).disabled = !ready; $("clip-" + k).classList.toggle("chosen", S.mine[p.id] === id); });
+  $("choose-2").disabled = !ready; $("choose-2").classList.toggle("chosen", S.mine[p.id] === "tie");
+  $("hint").textContent = S.mine[p.id] ? "Saved. Pick another answer to change it." : ready ? "Which one is more surprising, yet still musical?" : "Play both clips to unlock the choice.";
+}
+function render() {
+  $("pair-no").textContent = "Pair " + (S.idx + 1) + " of " + N;
+  $("prev").disabled = S.idx === 0; $("next").disabled = S.idx === N - 1;
+  const n = PAIRS.filter((p) => S.mine[p.id]).length;
+  $("prog-text").textContent = n + " / " + N + " rated";
+  $("prog-bar").style.width = (100 * n / N) + "%";
+  $("done").hidden = n < N;
+  const dots = $("dots"); dots.textContent = "";
+  S.order.forEach((pi, i) => { const b = document.createElement("button"); b.className = "dot" + (S.mine[PAIRS[pi].id] ? " done" : "") + (i === S.idx ? " here" : ""); b.textContent = i + 1; b.setAttribute("aria-label", "Pair " + (i + 1)); b.onclick = () => go(i); dots.append(b); });
+  paintPlay(); paintTime(); paintChoice();
+}
+function go(i) { stop(); S.idx = Math.max(0, Math.min(N - 1, i)); render(); }
+function firstOpen(from) { for (let i = from + 1; i < N; i++) if (!S.mine[PAIRS[S.order[i]].id]) return i; for (let i = 0; i < N; i++) if (!S.mine[PAIRS[S.order[i]].id]) return i; return Math.min(from + 1, N - 1); }
+
+function choose(k) {
+  const p = cur(), sd = sides();
+  S.mine[p.id] = k === 2 ? "tie" : sd[k];
+  store("lt-mine", JSON.stringify(S.mine));
+  send({ participant: S.pid, a: p.a, b: p.b, choice: S.mine[p.id], left: sd[0], position: S.idx + 1 });
+  render();
+  if (S.idx < N - 1) setTimeout(() => { if (cur().id === p.id) go(firstOpen(S.idx)); }, 450);
+}
+
+// Sending: each answer is posted as one row; failed sends wait in a queue and retry.
+let queue = []; try { queue = JSON.parse(store("lt-queue") || "[]"); } catch (e) {}
+let sending = false;
+function status(msg) { $("status").textContent = msg; $("status").hidden = !msg; }
+function send(row) { queue.push(row); store("lt-queue", JSON.stringify(queue)); flush(); }
+async function flush() {
+  if (sending || !queue.length) return;
+  if (!ENDPOINT) { status("This test is not connected to its answer sheet yet, so answers are kept in this browser only."); return; }
+  sending = true;
+  while (queue.length) {
+    try { await fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(queue[0]) }); }
+    catch (e) { status("Answers could not be sent. Check your connection; they will be sent automatically."); sending = false; setTimeout(flush, 5000); return; }
+    queue.shift(); store("lt-queue", JSON.stringify(queue));
+  }
+  status(""); sending = false;
+}
+
+$("play-0").onclick = () => toggle(0); $("play-1").onclick = () => toggle(1);
+$("choose-0").onclick = () => choose(0); $("choose-1").onclick = () => choose(1); $("choose-2").onclick = () => choose(2);
+$("prev").onclick = () => go(S.idx - 1); $("next").onclick = () => go(S.idx + 1);
+
+S.pid = participant();
+arrange(S.pid);
+try { S.mine = JSON.parse(store("lt-mine") || "{}"); } catch (e) {}
+S.idx = Math.max(0, S.order.findIndex((pi) => !S.mine[PAIRS[pi].id]));
+render();
+flush();
+</script>
+</body>
+</html>
